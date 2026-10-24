@@ -47,6 +47,7 @@ docs/           ARCHITECTURE, COLLECTORS, GUARDRAILS, PLAN
 - **Queue:** Postgres `FOR UPDATE SKIP LOCKED` (same pattern as Lookfar) so one dependency, no Redis.
 - **Auth:** Better Auth on the Next.js side (email and password first), with the API verifying the signed session cookie against the shared Postgres, as in Lookfar and Upzy.
 - **UI:** shadcn/ui on Tailwind v4, themed with the Casebook tokens in `docs/STYLE_GUIDE.md`. Tooling: oxlint and oxfmt.
+- **Data access:** neither Drizzle nor Prisma. The API is Python, so domain tables use SQLAlchemy 2.0 with Alembic migrations. Better Auth owns its own tables (`user`, `session`, `account`, `verification`) through `bun run auth:migrate`, and Alembic is configured to ignore them. The web app never queries domain tables, it calls the API. The API reads the `session` table with one raw SQL query.
 - **Graph UI:** React Flow or Cytoscape.js. Decide in a spike.
 - **Deploy:** run as a hosted service. Docker compose is for local development only. Provider API keys are managed per workspace.
 - **Evidence store:** raw responses saved to disk or S3-compatible storage, SHA-256 recorded on the observation row.

@@ -1,16 +1,13 @@
 import type { Metadata } from 'next';
-import { Caveat, Recursive } from 'next/font/google';
+import { Geist_Mono, Sora } from 'next/font/google';
+import { ThemeProvider } from 'next-themes';
 import { cn } from '@/lib/utils';
 import './globals.css';
 
-const recursive = Recursive({
+const sora = Sora({ subsets: ['latin'], variable: '--font-sora', display: 'swap' });
+const geistMono = Geist_Mono({
   subsets: ['latin'],
-  variable: '--font-recursive',
-  display: 'swap',
-});
-const caveat = Caveat({
-  subsets: ['latin'],
-  variable: '--font-caveat',
+  variable: '--font-geist-mono',
   display: 'swap',
 });
 
@@ -22,8 +19,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en' className={cn(recursive.variable, caveat.variable)}>
-      <body>{children}</body>
+    <html lang='en' suppressHydrationWarning className={cn(sora.variable, geistMono.variable)}>
+      <body>
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

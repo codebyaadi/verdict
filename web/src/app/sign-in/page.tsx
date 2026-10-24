@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { authClient } from '@/lib/auth-client';
@@ -21,21 +23,22 @@ export default function SignInPage() {
     const res =
       mode === 'in'
         ? await authClient.signIn.email({ email, password })
-        : await authClient.signUp.email({
-            email,
-            password,
-            name: email.split('@')[0],
-          });
+        : await authClient.signUp.email({ email, password, name: email.split('@')[0] });
     if (res.error) setError(res.error.message ?? 'Something went wrong');
     else router.push('/app');
   }
 
   return (
-    <main className='mx-auto flex min-h-screen max-w-sm flex-col justify-center gap-4 px-6'>
-      <h1 className='text-3xl font-bold'>{mode === 'in' ? 'Sign in' : 'Create account'}</h1>
-      <Card className='backdrop-blur'>
-        <CardContent>
-          <form onSubmit={onSubmit} className='flex flex-col gap-4'>
+    <div className='ambient min-h-screen'>
+      <main className='mx-auto flex min-h-screen max-w-sm flex-col justify-center gap-6 px-4'>
+        <Link href='/' aria-label='Casebook home'>
+          <Logo />
+        </Link>
+        <h1 className='text-4xl font-extrabold tracking-tighter'>
+          {mode === 'in' ? 'Sign in' : 'Create account'}
+        </h1>
+        <Card className='shadow-[var(--shadow-panel)]'>
+          <form onSubmit={onSubmit} className='flex flex-col gap-4 px-6'>
             <div className='grid gap-1.5'>
               <Label htmlFor='email'>Email</Label>
               <Input id='email' name='email' type='email' required />
@@ -58,15 +61,15 @@ export default function SignInPage() {
             ) : null}
             <Button type='submit'>{mode === 'in' ? 'Sign in' : 'Sign up'}</Button>
           </form>
-        </CardContent>
-      </Card>
-      <button
-        type='button'
-        onClick={() => setMode(mode === 'in' ? 'up' : 'in')}
-        className='text-muted-foreground w-fit text-sm underline'
-      >
-        {mode === 'in' ? 'Need an account? Sign up' : 'Have an account? Sign in'}
-      </button>
-    </main>
+        </Card>
+        <button
+          type='button'
+          onClick={() => setMode(mode === 'in' ? 'up' : 'in')}
+          className='text-muted-foreground w-fit cursor-pointer text-sm underline underline-offset-4'
+        >
+          {mode === 'in' ? 'Need an account? Sign up' : 'Have an account? Sign in'}
+        </button>
+      </main>
+    </div>
   );
 }

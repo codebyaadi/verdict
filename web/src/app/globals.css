@@ -4,56 +4,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Casebook tokens (see docs/STYLE_GUIDE.md): paper, ink and a stamp-red accent.
- * The shadcn/ui semantic variables below are mapped onto that palette, so every
- * shadcn component picks up the brand automatically.
- */
-:root {
-  --paper: oklch(0.965 0.012 85);
-  --ink: oklch(0.2 0.02 265);
-  --stamp: oklch(0.58 0.215 25);
-  --stamp-contrast: oklch(0.98 0.01 25);
-  --radius: 0.5rem;
-
-  --background: var(--paper);
-  --foreground: var(--ink);
-  --card: oklch(0.99 0.006 85 / 0.7);
-  --card-foreground: var(--ink);
-  --popover: oklch(0.99 0.006 85);
-  --popover-foreground: var(--ink);
-  --primary: var(--stamp);
-  --primary-foreground: var(--stamp-contrast);
-  --secondary: var(--ink);
-  --secondary-foreground: var(--paper);
-  --muted: oklch(0.935 0.016 85);
-  --muted-foreground: oklch(0.5 0.02 265);
-  --accent: oklch(0.935 0.016 85);
-  --accent-foreground: var(--ink);
-  --destructive: oklch(0.55 0.22 27);
-  --border: oklch(0.86 0.014 85);
-  --input: oklch(0.86 0.014 85);
-  --ring: var(--stamp);
-}
-
-.dark {
-  --paper: oklch(0.17 0.015 265);
-  --ink: oklch(0.96 0.008 85);
-  --background: var(--paper);
-  --foreground: var(--ink);
-  --card: oklch(0.22 0.018 265 / 0.7);
-  --popover: oklch(0.22 0.018 265);
-  --muted: oklch(0.25 0.02 265);
-  --muted-foreground: oklch(0.72 0.015 85);
-  --accent: oklch(0.25 0.02 265);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 15%);
-}
-
-@theme inline {
-  --font-sans: var(--font-recursive), ui-sans-serif, system-ui, sans-serif;
+@theme {
+  --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-heading: var(--font-sans);
-  --font-hand: var(--font-caveat), cursive;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -70,47 +24,101 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-stamp: var(--stamp);
+  --color-brand: var(--brand);
 
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@layer base {
+  /*
+   * Casebook palette ("raspberry"): one rose-magenta hue family throughout, so
+   * the canvas, primary and accent always belong together. Same system as
+   * Lookfar (docs/STYLE_GUIDE.md) in a hue none of the other products use.
+   */
+  :root {
+    color-scheme: light;
+    --background: #fcf3f6;
+    --foreground: #1f1217;
+    --card: #ffffff;
+    --card-foreground: #1f1217;
+    --popover: #ffffff;
+    --popover-foreground: #1f1217;
+    --primary: #3d1226;
+    --primary-foreground: #ffffff;
+    --secondary: rgba(31, 18, 23, 0.05);
+    --secondary-foreground: #3d1226;
+    --muted: rgba(31, 18, 23, 0.05);
+    --muted-foreground: #6b5861;
+    --accent: rgba(190, 40, 100, 0.13);
+    --accent-foreground: #5c1038;
+    --destructive: #b3261e;
+    --destructive-foreground: #ffffff;
+    --border: rgba(31, 18, 23, 0.12);
+    --input: rgba(31, 18, 23, 0.17);
+    --ring: #b4235f;
+    --brand: #b4235f;
+    --blob-1: #fbd6e4;
+    --blob-2: rgba(233, 120, 160, 0.3);
+    --shadow-panel: 0 12px 40px rgba(61, 18, 38, 0.12);
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --background: #120a0e;
+    --foreground: #f8ecf1;
+    --card: #1e1218;
+    --card-foreground: #f8ecf1;
+    --popover: #1e1218;
+    --popover-foreground: #f8ecf1;
+    --primary: #f9cfe0;
+    --primary-foreground: #2a0f1c;
+    --secondary: rgba(255, 190, 215, 0.07);
+    --secondary-foreground: #f6dbe7;
+    --muted: rgba(255, 190, 215, 0.05);
+    --muted-foreground: #b19ca6;
+    --accent: rgba(255, 127, 174, 0.18);
+    --accent-foreground: #fde0ec;
+    --destructive: #ff9a8a;
+    --destructive-foreground: #1a0a09;
+    --border: rgba(255, 190, 215, 0.14);
+    --input: rgba(255, 190, 215, 0.19);
+    --ring: #ff7fae;
+    --brand: #ff7fae;
+    --blob-1: rgba(255, 127, 174, 0.15);
+    --blob-2: rgba(190, 40, 100, 0.18);
+    --shadow-panel: 0 12px 40px rgba(0, 0, 0, 0.5);
+  }
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
-  }
-  html {
-    @apply font-sans;
+    @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
-    background-image: radial-gradient(oklch(0.2 0.02 265 / 0.05) 1px, transparent 1px);
-    background-size: 22px 22px;
-  }
-  h1,
-  h2,
-  h3 {
-    text-wrap: balance;
-    letter-spacing: -0.02em;
-  }
-  p {
-    text-wrap: pretty;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 }
 
-/* Key words are marked like a highlighter pen. */
-.mark-word {
-  color: var(--stamp);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
+@layer components {
+  /* Soft glows behind glass panels. Add class="ambient" to a page wrapper. */
+  .ambient::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(40rem 32rem at 8% -6%, var(--blob-1), transparent 70%),
+      radial-gradient(34rem 28rem at 100% 100%, var(--blob-2), transparent 70%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
