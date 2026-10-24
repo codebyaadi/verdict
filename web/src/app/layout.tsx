@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist_Mono, Sora } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
+import { site } from '@/lib/site';
 import { cn } from '@/lib/utils';
 import './globals.css';
 
@@ -12,9 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Casebook: a case file for the open web',
-  description:
-    'Collect public data, connect it, and prove where every fact came from. A passive OSINT investigation workspace.',
+  metadataBase: new URL(site.url),
+  title: site.title,
+  description: site.description,
+  keywords: site.keywords,
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    url: site.url,
+    siteName: site.name,
+    title: site.title,
+    description: site.description,
+  },
+  twitter: { card: 'summary_large_image', title: site.title, description: site.description },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
