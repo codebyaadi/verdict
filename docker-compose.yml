@@ -1,0 +1,15 @@
+# Local development database only.
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: casebook
+      POSTGRES_PASSWORD: casebook
+      POSTGRES_DB: casebook
+    ports:
+      - '5432:5432'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:

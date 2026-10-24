@@ -1,0 +1,5 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "nextjs", "typescript"],
+  "ignorePatterns": [".next/**", "next-env.d.ts"]
+}
