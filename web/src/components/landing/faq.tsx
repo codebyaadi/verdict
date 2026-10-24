@@ -2,12 +2,12 @@ import { ChevronDown } from 'lucide-react';
 
 export const faqs = [
   {
-    q: 'Is Casebook ready to use today?',
+    q: 'Is Verdict ready to use today?',
     a: 'Not yet. It is early access: accounts and sign-in work now. Cases, collectors, the graph and reports are being built in that order, and every feature on this page is labelled Live or Coming soon.',
   },
   {
     q: 'Is it passive?',
-    a: 'Yes. Casebook only reads public sources. It does not port scan, exploit anything, log in to other sites or use leaked-database dumps, and every collector run is written to an audit log.',
+    a: 'Yes. Verdict only reads public sources. It does not port scan, exploit anything, log in to other sites or use leaked-database dumps, and every collector run is written to an audit log.',
   },
   {
     q: 'Can I look people up with it?',
@@ -19,7 +19,7 @@ export const faqs = [
   },
   {
     q: 'Is it open source?',
-    a: 'The code is MIT licensed on GitHub. Casebook itself is offered as a hosted service, which is where the data sources, upkeep and support come from.',
+    a: 'The code is MIT licensed on GitHub. Verdict itself is offered as a hosted service, which is where the data sources, upkeep and support come from.',
   },
   {
     q: 'What will it cost?',

@@ -17,7 +17,7 @@ export function Navbar() {
         aria-label='Main'
         className='bg-card/70 mx-auto flex h-14 max-w-5xl items-center justify-between rounded-full border pr-2 pl-4 shadow-[var(--shadow-panel)] backdrop-blur-xl'
       >
-        <Link href='/' aria-label='Casebook home'>
+        <Link href='/' aria-label='Verdict home'>
           <Logo />
         </Link>
 

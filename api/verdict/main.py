@@ -3,10 +3,10 @@ from typing import Annotated
 from fastapi import Depends, FastAPI, HTTPException, Request
 from psycopg_pool import ConnectionPool
 
-from casebook.config import settings
-from casebook.session import COOKIE_NAMES, verify_cookie
+from verdict.config import settings
+from verdict.session import COOKIE_NAMES, verify_cookie
 
-app = FastAPI(title="Casebook API", version="0.1.0")
+app = FastAPI(title="Verdict API", version="0.1.0")
 
 _pool: ConnectionPool | None = None
 

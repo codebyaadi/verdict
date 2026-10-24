@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-/** A case-file tab with a magnifier dot: heavy strokes, same weight as the wordmark. */
+/** A shield with a check: proof plus authorization, the two things Verdict is about. */
 export function LogoGlyph({ className }: { className?: string }) {
   return (
     <svg
@@ -12,11 +12,11 @@ export function LogoGlyph({ className }: { className?: string }) {
       strokeLinejoin='round'
     >
       <path
-        d='M5 9.5V24a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V12a2 2 0 0 0-2-2H15l-2.6-3.6A2 2 0 0 0 10.8 5.6H7A2 2 0 0 0 5 7.6'
+        d='M16 3 5 7v8c0 7 5 11.5 11 13 6-1.5 11-6 11-13V7L16 3Z'
         stroke='currentColor'
-        strokeWidth='3.2'
+        strokeWidth='2.6'
       />
-      <circle cx='16' cy='18' r='3.4' fill='currentColor' />
+      <path d='M11 16l3.5 3.5L22 12' stroke='currentColor' strokeWidth='2.6' />
     </svg>
   );
 }
@@ -25,11 +25,11 @@ export function Logo({ className, markOnly }: { className?: string; markOnly?: b
   return (
     <span className={cn('inline-flex items-center gap-2.5', className)}>
       <span className='bg-primary text-primary-foreground grid size-9 shrink-0 place-items-center rounded-xl shadow-sm'>
-        <LogoGlyph className='size-6' />
+        <LogoGlyph className='size-5' />
       </span>
       {!markOnly && (
         <span className='text-[1.4rem] leading-none font-extrabold tracking-tighter'>
-          Casebook<span className='text-brand'>.</span>
+          Verdict<span className='text-brand'>.</span>
         </span>
       )}
     </span>

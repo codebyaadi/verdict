@@ -1,7 +1,7 @@
 [project]
-name = "casebook-api"
+name = "verdict-api"
 version = "0.1.0"
-description = "Casebook API and workers"
+description = "Verdict API and workers"
 requires-python = ">=3.12"
 dependencies = [
   "fastapi>=0.115",
@@ -14,7 +14,7 @@ dependencies = [
 dev = ["pytest>=8", "httpx>=0.27", "ruff>=0.8"]
 
 [tool.setuptools.packages.find]
-include = ["casebook*"]
+include = ["verdict*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

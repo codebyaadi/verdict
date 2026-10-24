@@ -28,7 +28,7 @@ export function Footer() {
         </nav>
       </div>
       <p className='text-muted-foreground mx-auto mt-8 max-w-5xl text-xs'>
-        © {year} Casebook · MIT licensed
+        © {year} Verdict · MIT licensed
       </p>
     </footer>
   );

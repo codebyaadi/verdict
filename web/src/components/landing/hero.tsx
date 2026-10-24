@@ -17,7 +17,7 @@ export function Hero() {
           <span className='text-brand'>the open web.</span>
         </h1>
         <p className='text-muted-foreground mt-6 max-w-2xl text-lg leading-relaxed text-pretty'>
-          Open a case, add a domain, a username or a repository, and Casebook collects what is
+          Open a case, add a domain, a username or a repository, and Verdict collects what is
           public, connects it, and keeps the evidence behind every fact so you can show your work.
         </p>
         <div className='mt-9 flex flex-col items-center gap-3 sm:flex-row'>

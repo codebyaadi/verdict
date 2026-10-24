@@ -5,8 +5,8 @@ from urllib.parse import quote
 
 from fastapi.testclient import TestClient
 
-from casebook.main import app
-from casebook.session import verify_cookie
+from verdict.main import app
+from verdict.session import verify_cookie
 
 SECRET = "s3cret-for-tests"
 

@@ -38,62 +38,64 @@
 
 @layer base {
   /*
-   * Casebook palette ("raspberry"): one rose-magenta hue family throughout, so
-   * the canvas, primary and accent always belong together. Same system as
-   * Lookfar (docs/STYLE_GUIDE.md) in a hue none of the other products use.
+   * Verdict palette ("emerald"): one green hue family throughout, so the canvas,
+   * primary and accent always belong together. Same system as Lookfar
+   * (docs/STYLE_GUIDE.md) in a hue none of the other products use — green reads
+   * as offensive-security / terminal, which fits a pentest tool. Errors stay a
+   * warm red so they never read as the accent.
    */
   :root {
     color-scheme: light;
-    --background: #fcf3f6;
-    --foreground: #1f1217;
+    --background: #f1f8f3;
+    --foreground: #0d1912;
     --card: #ffffff;
-    --card-foreground: #1f1217;
+    --card-foreground: #0d1912;
     --popover: #ffffff;
-    --popover-foreground: #1f1217;
-    --primary: #3d1226;
+    --popover-foreground: #0d1912;
+    --primary: #0f2a1d;
     --primary-foreground: #ffffff;
-    --secondary: rgba(31, 18, 23, 0.05);
-    --secondary-foreground: #3d1226;
-    --muted: rgba(31, 18, 23, 0.05);
-    --muted-foreground: #6b5861;
-    --accent: rgba(190, 40, 100, 0.13);
-    --accent-foreground: #5c1038;
+    --secondary: rgba(13, 25, 18, 0.05);
+    --secondary-foreground: #0f2a1d;
+    --muted: rgba(13, 25, 18, 0.05);
+    --muted-foreground: #566b60;
+    --accent: rgba(16, 150, 96, 0.13);
+    --accent-foreground: #0a4b31;
     --destructive: #b3261e;
     --destructive-foreground: #ffffff;
-    --border: rgba(31, 18, 23, 0.12);
-    --input: rgba(31, 18, 23, 0.17);
-    --ring: #b4235f;
-    --brand: #b4235f;
-    --blob-1: #fbd6e4;
-    --blob-2: rgba(233, 120, 160, 0.3);
-    --shadow-panel: 0 12px 40px rgba(61, 18, 38, 0.12);
+    --border: rgba(13, 25, 18, 0.12);
+    --input: rgba(13, 25, 18, 0.17);
+    --ring: #0a7d50;
+    --brand: #0a7d50;
+    --blob-1: #c6f0d8;
+    --blob-2: rgba(52, 200, 140, 0.3);
+    --shadow-panel: 0 12px 40px rgba(10, 40, 28, 0.12);
     --radius: 0.75rem;
   }
 
   .dark {
     color-scheme: dark;
-    --background: #120a0e;
-    --foreground: #f8ecf1;
-    --card: #1e1218;
-    --card-foreground: #f8ecf1;
-    --popover: #1e1218;
-    --popover-foreground: #f8ecf1;
-    --primary: #f9cfe0;
-    --primary-foreground: #2a0f1c;
-    --secondary: rgba(255, 190, 215, 0.07);
-    --secondary-foreground: #f6dbe7;
-    --muted: rgba(255, 190, 215, 0.05);
-    --muted-foreground: #b19ca6;
-    --accent: rgba(255, 127, 174, 0.18);
-    --accent-foreground: #fde0ec;
+    --background: #0a150f;
+    --foreground: #e9f5ee;
+    --card: #0f1d16;
+    --card-foreground: #e9f5ee;
+    --popover: #0f1d16;
+    --popover-foreground: #e9f5ee;
+    --primary: #8ff0c0;
+    --primary-foreground: #06140d;
+    --secondary: rgba(140, 240, 190, 0.07);
+    --secondary-foreground: #d7f3e4;
+    --muted: rgba(140, 240, 190, 0.05);
+    --muted-foreground: #9ab1a6;
+    --accent: rgba(60, 220, 150, 0.18);
+    --accent-foreground: #cdefdc;
     --destructive: #ff9a8a;
     --destructive-foreground: #1a0a09;
-    --border: rgba(255, 190, 215, 0.14);
-    --input: rgba(255, 190, 215, 0.19);
-    --ring: #ff7fae;
-    --brand: #ff7fae;
-    --blob-1: rgba(255, 127, 174, 0.15);
-    --blob-2: rgba(190, 40, 100, 0.18);
+    --border: rgba(140, 240, 190, 0.14);
+    --input: rgba(140, 240, 190, 0.19);
+    --ring: #3ddc96;
+    --brand: #3ddc96;
+    --blob-1: rgba(60, 220, 150, 0.15);
+    --blob-2: rgba(16, 150, 96, 0.18);
     --shadow-panel: 0 12px 40px rgba(0, 0, 0, 0.5);
   }
 }

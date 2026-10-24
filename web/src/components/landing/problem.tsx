@@ -4,17 +4,17 @@ const points = [
   {
     icon: Layers,
     title: 'Scattered across a dozen tabs',
-    body: 'Registry lookups, DNS tools, code search and screenshots end up in different places. Casebook keeps every lead in one case, connected in a graph.',
+    body: 'Registry lookups, DNS tools, code search and screenshots end up in different places. Verdict keeps every lead in one case, connected in a graph.',
   },
   {
     icon: FileX,
     title: 'Findings you cannot prove',
-    body: 'A screenshot is not evidence. Casebook stores the source, the time of collection, a snapshot and a hash for every fact, so a claim can be traced back.',
+    body: 'A screenshot is not evidence. Verdict stores the source, the time of collection, a snapshot and a hash for every fact, so a claim can be traced back.',
   },
   {
     icon: ShieldAlert,
     title: 'Tools that cross the line',
-    body: 'Casebook is passive and public-only. It does not scan, exploit or log in to other sites, and every collector run is written to an audit log.',
+    body: 'Verdict is passive and public-only. It does not scan, exploit or log in to other sites, and every collector run is written to an audit log.',
   },
 ];
 
@@ -22,7 +22,7 @@ export function Problem() {
   return (
     <section className='px-4 py-24'>
       <div className='mx-auto max-w-5xl'>
-        <p className='text-brand text-center text-sm font-semibold'>Why Casebook</p>
+        <p className='text-brand text-center text-sm font-semibold'>Why Verdict</p>
         <h2 className='mx-auto mt-3 max-w-3xl text-center text-4xl font-extrabold tracking-tighter text-balance sm:text-5xl'>
           Research you can hand to someone and defend.
         </h2>

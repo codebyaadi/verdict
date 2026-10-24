@@ -1,16 +1,16 @@
 export const site = {
-  name: 'Casebook',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://casebook.codebyaadi.com',
-  title: 'Casebook: a case file for the open web',
+  name: 'Verdict',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://verdict.codebyaadi.com',
+  title: 'Verdict: an AI pentester that proves its findings',
   description:
-    'A passive OSINT investigation workspace. Collect public data, connect it in a graph, and prove where every fact came from.',
-  github: 'https://github.com/codebyaadi/casebook',
+    'An agentic penetration-testing workspace. Recon, scan and non-destructively confirm vulnerabilities on infrastructure you have proven you own — every finding backed by a proof, not a guess.',
+  github: 'https://github.com/codebyaadi/verdict',
   keywords: [
-    'OSINT',
-    'investigation',
-    'open-source intelligence',
-    'evidence',
+    'penetration testing',
+    'AI pentest',
     'attack surface',
-    'research',
+    'vulnerability validation',
+    'proof-based scanning',
+    'security',
   ],
 };

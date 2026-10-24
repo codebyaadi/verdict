@@ -20,7 +20,7 @@ jobs:
       - run: bun run typecheck
       - run: bun run build
         env:
-          DATABASE_URL: postgres://casebook:casebook@localhost:5432/casebook
+          DATABASE_URL: postgres://verdict:verdict@localhost:5432/verdict
           BETTER_AUTH_SECRET: ci-only-secret-ci-only-secret-ci-only
           BETTER_AUTH_URL: http://localhost:3000
 

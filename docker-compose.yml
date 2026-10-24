@@ -3,9 +3,9 @@ services:
   db:
     image: postgres:17
     environment:
-      POSTGRES_USER: casebook
-      POSTGRES_PASSWORD: casebook
-      POSTGRES_DB: casebook
+      POSTGRES_USER: verdict
+      POSTGRES_PASSWORD: verdict
+      POSTGRES_DB: verdict
     ports:
       - '5432:5432'
     volumes:

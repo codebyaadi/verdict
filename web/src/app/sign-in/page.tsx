@@ -31,7 +31,7 @@ export default function SignInPage() {
   return (
     <div className='ambient min-h-screen'>
       <main className='mx-auto flex min-h-screen max-w-sm flex-col justify-center gap-6 px-4'>
-        <Link href='/' aria-label='Casebook home'>
+        <Link href='/' aria-label='Verdict home'>
           <Logo />
         </Link>
         <h1 className='text-4xl font-extrabold tracking-tighter'>
